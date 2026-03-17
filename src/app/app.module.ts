@@ -11,6 +11,7 @@ import { ForgetComponent } from './pages/forget/forget.component';
 import { WorkersComponent } from './pages/workers/workers.component';
 import { WorkerDetailsComponent } from './pages/workers/worker-details/worker-details.component';
 import { CategoryComponent } from './pages/category/category.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CategoryComponent } from './pages/category/category.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
