@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -16,7 +17,17 @@ export class SignupComponent {
     work: new FormControl(''),
   });
 
+  constructor(private router: Router){};
+
   onSubmit(){
-    console.log(this.userForm.value);
+    if(this.userForm.valid){
+      console.log(this.userForm.value);
+    window.alert("Register successfully!");
+     this.router.navigate(['/home']);
+    }
+    else{
+      this.userForm.markAllAsTouched();
+    }
   }
+
 }
