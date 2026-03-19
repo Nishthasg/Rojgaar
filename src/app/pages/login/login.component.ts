@@ -16,13 +16,10 @@ export class LoginComponent {
 
  onSubmit(){
   if(this.loginForm.valid){
-    alert("Login successfully!");
-    console.log(this.loginForm.value);
     this.router.navigate(['/home']);
   }
   else{
     this.loginForm.markAllAsTouched();
-    console.log("error");
   }
  }
 
