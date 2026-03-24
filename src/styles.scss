@@ -4,3 +4,13 @@
   --bs-secondary: #fef7f2;
   --bs-secondary-rgb: 254, 247, 242;
 }
+.btn-primary {
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+
+  --bs-btn-hover-bg: #e03e00;
+  --bs-btn-hover-border-color: #e03e00;
+
+  --bs-btn-active-bg: #c83700;
+  --bs-btn-active-border-color: #c83700;
+}
