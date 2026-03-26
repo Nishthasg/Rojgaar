@@ -50,7 +50,7 @@
         </div>
         <div class="row g-4 mx-2">
             <div class="col-12 col-md-6 col-lg-4" *ngFor="let item of workerList;">
-                <app-worker-cards></app-worker-cards>
+                <app-worker-cards [worker]="item"></app-worker-cards>
             </div>
         </div>
     </div>
