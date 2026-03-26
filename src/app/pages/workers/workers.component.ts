@@ -12,6 +12,7 @@ export class WorkersComponent {
  openShortby = false;
  shortby:String = "Most Experience";
  workerList: any[] = [];
+ filteredList: any[] =[];
 //  workerList = [
 //   {
 //     name:'Ramesh Kumar',
@@ -57,8 +58,9 @@ export class WorkersComponent {
   }
   
   ngOnInit(){
-    this.workerList = this.dataservice.getWorkers();
-    console.log(this.dataservice.getWorkers());
+    this.workerList = this.dataservice.getWorkers()
+     this.filteredList = [...this.workerList];
+    console.log("workerListworkerListworkerList",this.workerList)
   }
  goBack(){
   this.location.back();
@@ -70,5 +72,14 @@ export class WorkersComponent {
  selectedFilter(option:String){
   this.shortby = option;
   this.openShortby = false;
+ }
+
+ //console.log(filteredList);
+ onSearch(event:any){
+  const value = event.target.value.toLowerCase();
+  this.filteredList = this.workerList.filter(workerList=>{
+   return workerList.name.toLowerCase().includes(value) || 
+    workerList.profession.toLowerCase().includes(value)
+  });
  }
 }
