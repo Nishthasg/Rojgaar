@@ -23,12 +23,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     ForgetComponent,
     WorkersComponent,
     WorkerDetailsComponent,
-    CategoryComponent
+    CategoryComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

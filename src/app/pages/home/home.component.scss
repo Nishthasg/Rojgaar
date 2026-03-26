@@ -1,5 +1,8 @@
 .home_container{
     padding-top:50px;
+    min-height:100vh;
+    width:fit-content;
+    overflow-x:hidden;
     h1{
         font-size:4rem;
     }
@@ -64,4 +67,17 @@
     }
     }
    }
+}
+
+@media(max-width:425px){
+ .home_container{
+    h1{
+        font-size:3rem;
+        margin-top:15%;
+    }
+    text-align: center;
+ }
+.img_container{
+        display:none;
+    }
 }
