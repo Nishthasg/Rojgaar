@@ -12,6 +12,7 @@ import { WorkersComponent } from './pages/workers/workers.component';
 import { WorkerDetailsComponent } from './pages/workers/worker-details/worker-details.component';
 import { CategoryComponent } from './pages/category/category.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { WorkerCardsComponent } from './components/worker-cards/worker-cards.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ForgetComponent,
     WorkersComponent,
     WorkerDetailsComponent,
+    WorkerCardsComponent,
     CategoryComponent,
   ],
   imports: [
