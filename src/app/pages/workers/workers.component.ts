@@ -71,6 +71,16 @@ export class WorkersComponent {
 
  selectedFilter(option:String){
   this.shortby = option;
+  if(option === "Highest Rated"){
+    this.filteredList = [...this.filteredList].sort((a,b)=>{
+      return b.rating - a.rating;
+    })
+  }
+  if(option === "Most Experience"){
+    this.filteredList = [...this.filteredList].sort((a,b)=>{
+      return b.experience - a.experience;
+    })
+  }
   this.openShortby = false;
  }
 
@@ -80,6 +90,18 @@ export class WorkersComponent {
   this.filteredList = this.workerList.filter(workerList=>{
    return workerList.name.toLowerCase().includes(value) || 
     workerList.profession.toLowerCase().includes(value)
+  });
+ }
+ filterLocation(event:any){
+  const value = event.target.value.toLowerCase();
+  this.filteredList = this.workerList.filter(workerList=>{
+   return workerList.address.toLowerCase().includes(value)
+  });
+ }
+ filterCategory(event:any){
+  const value = event.target.value.toLowerCase();
+  this.filteredList = this.workerList.filter(worker =>{
+ return worker.profession.toLowerCase().includes(value)
   });
  }
 }

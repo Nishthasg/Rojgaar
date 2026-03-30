@@ -18,13 +18,14 @@
             </div>
             <div class="form-group">
                 <label>Location</label>
-                <input type="text" class="form-control" placeholder="eg. Mumbai">
+                <input type="text" class="form-control" placeholder="eg. Mumbai" (input)="filterLocation($event)">
             </div>
             <div class="form-group">
                 <label>Category</label>
-                <select class="form-control">
-                    <option selected>All Categories</option>
-                    <option>Painter</option>
+                <select class="form-control" (change)="filterCategory($event)">
+                    <option value="" selected>All Categories</option>
+                    <option value="painter">Painter</option>
+                    <option value="electrician">Electrician</option>
                 </select>
             </div>
         </div>
