@@ -3,27 +3,27 @@
             <h1 class="fw-bolder">Find trusted local <span class="text-primary">workers</span> in minutes</h1>
             <p class="text-muted fs-5 mt-1">Connect with verified painters, plumbers, electricians, and more daily wage professionals near your
                 location.</p>
-            <div class="bg-white search d-flex gap-2">
+            <div class="bg-white search d-flex gap-2" >
                 <div class="input-group">
                   <span class="input-group-text">
                     <i class="bi bi-search"></i>
                   </span>
-                  <input type="text" class="form-control" placeholder="What service do you need?">
+                  <input type="text" class="form-control" #serviceInput placeholder="What service do you need?">
                 </div>
                 <div class="input-group">
                   <span class="input-group-text">
                     <i class="bi bi-geo-alt"></i>
                   </span>
-                  <input type="text" class="form-control" placeholder="Your location">
+                  <input type="text" class="form-control" #locationInput placeholder="Your location">
                 </div>
-                <button class="btn btn-primary px-4" [routerLink]="['/workers']">Search</button>
+                <button class="btn btn-primary px-4" (click)="search(serviceInput.value, locationInput.value)">Search</button>
             </div>
             <div class="d-flex gap-3 mt-5 filter">
                 <p>Popular:</p>
-                <div><a>Plumber</a></div>
-                <div><a>Electricians</a></div>
-                <div><a>Painter</a></div>
-                <div><a>Gardener</a></div>
+                <div><a (click)="search('plumber', '')">Plumber</a></div>
+                <div><a (click)="search('electrician', '')">Electricians</a></div>
+                <div><a (click)="search('Painter', '')">Painter</a></div>
+                <div><a (click)="search('Gardener', '')">Gardener</a></div>
             </div>
         </div>
         <div class="img_container">

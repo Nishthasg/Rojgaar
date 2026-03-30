@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,8 +8,14 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  searchForm = new FormGroup({
-    profession: new FormControl('',[]),
-    location:new FormControl('',),
-  });
+  constructor(private router:Router){}
+
+  search(service:String, location:String){
+    this.router.navigate(['./workers'], {
+      queryParams: {
+       service:service,
+       location:location,
+      }
+    });
+  }
 }

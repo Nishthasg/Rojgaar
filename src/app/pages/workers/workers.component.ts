@@ -1,5 +1,6 @@
 import { Location } from '@angular/common';
 import { Component, ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { WorkerCardsComponent } from 'src/app/components/worker-cards/worker-cards.component';
 import { DataService } from 'src/app/shared/data.service';
 
@@ -53,21 +54,46 @@ export class WorkersComponent {
 //  ];
  
 
-  constructor(private location: Location, private dataservice:DataService){
+  constructor(private location: Location, private dataservice:DataService, private route: ActivatedRoute){
 
   }
   
   ngOnInit(){
     this.workerList = this.dataservice.getWorkers()
      this.filteredList = [...this.workerList];
-    console.log("workerListworkerListworkerList",this.workerList)
+    console.log("workerListworkerListworkerList",this.workerList);
+
+   console.log()
+    this.route.queryParams.subscribe( params =>{
+    const service = params['service']?.toLowerCase() || '';
+    const locations = params['location']?.toLowerCase() || '';
+    this.filterbyParams(service,locations);
+    console.log(params);
+    });
   }
+
  goBack(){
   this.location.back();
  }
+
  showShortby(){
   this.openShortby = ! this.openShortby;
  }
+
+filterbyParams(service:string ,locations:string){
+   this.filteredList = this.workerList.filter(worker => {
+
+    const matchesService =
+      !service ||
+      worker.profession?.toLowerCase().includes(service);
+
+    const matchesLocation =
+      !location ||
+      worker.address?.toLowerCase().includes(location);
+
+    return matchesService || matchesLocation;
+  });
+}
 
  selectedFilter(option:String){
   this.shortby = option;
