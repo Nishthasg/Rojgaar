@@ -8,7 +8,7 @@
                   <span class="input-group-text">
                     <i class="bi bi-search"></i>
                   </span>
-                  <input type="text" class="form-control" #serviceInput placeholder="What service do you need?">
+                  <input type="text" class="form-control" #serviceInput placeholder="What service do you need?" required>
                 </div>
                 <div class="input-group">
                   <span class="input-group-text">
@@ -39,3 +39,61 @@
           </div>
         </div>
     </div>
+
+    <!--Categories section-->
+<div class="mt-5 mx-4">
+  <div class="d-flex justify-content-between mb-3">
+    <h2>Browse Categories</h2>
+    <a class="text-primary" href="/workers">View All<i class="bi bi-arrow-right"></i></a>
+  </div>
+  <div class="row g-4">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="category-card card" (click)="search('painter', '')">
+        <div class="category-icon bg-secondary"><i class="bi bi-paint-bucket text-primary"></i></div>
+        <p class="fw-bold mt-2">Painter</p>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="category-card card" (click)="search('plumber', '')">
+        <div class="category-icon bg-secondary"><i class="bi bi-paint-bucket text-primary"></i></div>
+        <p class="fw-bold mt-2">Plumber</p>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="category-card card" (click)="search('electrician', '')">
+        <div class="category-icon bg-secondary"><i class="bi bi-paint-bucket text-primary"></i></div>
+        <p class="fw-bold mt-2">Electrician</p>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="category-card card" (click)="search('gardener', '')">
+        <div class="category-icon bg-secondary"><i class="bi bi-paint-bucket text-primary"></i></div>
+        <p class="fw-bold mt-2">Gardener</p>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="category-card card" (click)="search('Carpenter', '')">
+        <div class="category-icon bg-secondary"><i class="bi bi-paint-bucket text-primary"></i></div>
+        <p class="fw-bold mt-2">Carpenter</p>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="category-card card" (click)="search('barber', '')">
+        <div class="category-icon bg-secondary"><i class="bi bi-paint-bucket text-primary"></i></div>
+        <p class="fw-bold mt-2">Barber</p>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="category-card card" (click)="search('mason', '')">
+        <div class="category-icon bg-secondary"><i class="bi bi-paint-bucket text-primary"></i></div>
+        <p class="fw-bold mt-2">Mason</p>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="category-card card" (click)="search('cleaner', '')">
+        <div class="category-icon bg-secondary"><i class="bi bi-paint-bucket text-primary"></i></div>
+        <p class="fw-bold mt-2">Cleaner</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -69,6 +69,34 @@
    }
 }
 
+.category-card{
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    // height:100%;
+    width:100%;
+    min-height: 155px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.category-card:hover{
+    border-color:#ff4500;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    .category-icon{
+        background-color: #ff4500 !important;
+        i{
+            color:white !important;
+        }
+    }
+}
+.category-icon{
+     padding: 12px;
+    border-radius: 10px;
+    i{
+        font-size:1.5rem;
+    }
+}
 @media(max-width:425px){
  .home_container{
     h1{

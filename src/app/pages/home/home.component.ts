@@ -11,6 +11,10 @@ export class HomeComponent {
   constructor(private router:Router){}
 
   search(service:String, location:String){
+    if (!service || service.trim() === '') {
+    alert('Service is required');
+    return; 
+  }
     this.router.navigate(['./workers'], {
       queryParams: {
        service:service,
