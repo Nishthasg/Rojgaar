@@ -19,7 +19,7 @@
     align-items:center;
     gap: 5px;
     padding:5px 15px;
-    z-index: 999;
+    z-index: 99;
     position: relative;
     top: -100px;
     left: 32px;
@@ -97,6 +97,17 @@
         font-size:1.5rem;
     }
 }
+.rating{
+    border: 1px solid yellow;
+    border-radius: 5px;
+    height: fit-content;
+    padding: 0 10px;
+    background-color: rgb(255, 193, 7, 0.05);
+    font-size: small;
+    max-width: 72px;
+    margin: 2px auto !important;
+}
+
 @media(max-width:425px){
  .home_container{
     h1{

@@ -1,46 +1,47 @@
 <div class="home_container bg-secondary d-flex align-items-center">
-        <div class="ms-4">
-            <h1 class="fw-bolder">Find trusted local <span class="text-primary">workers</span> in minutes</h1>
-            <p class="text-muted fs-5 mt-1">Connect with verified painters, plumbers, electricians, and more daily wage professionals near your
-                location.</p>
-            <div class="bg-white search d-flex gap-2" >
-                <div class="input-group">
-                  <span class="input-group-text">
-                    <i class="bi bi-search"></i>
-                  </span>
-                  <input type="text" class="form-control" #serviceInput placeholder="What service do you need?" required>
-                </div>
-                <div class="input-group">
-                  <span class="input-group-text">
-                    <i class="bi bi-geo-alt"></i>
-                  </span>
-                  <input type="text" class="form-control" #locationInput placeholder="Your location">
-                </div>
-                <button class="btn btn-primary px-4" (click)="search(serviceInput.value, locationInput.value)">Search</button>
-            </div>
-            <div class="d-flex gap-3 mt-5 filter">
-                <p>Popular:</p>
-                <div><a (click)="search('plumber', '')">Plumber</a></div>
-                <div><a (click)="search('electrician', '')">Electricians</a></div>
-                <div><a (click)="search('Painter', '')">Painter</a></div>
-                <div><a (click)="search('Gardener', '')">Gardener</a></div>
-            </div>
-        </div>
-        <div class="img_container">
-          <img src="../../../assets/Images/home.jpg" alt="Image" height="500" width="700">
-          <div class="verified">
-             <div>
-                <i class="bi bi-star-fill text-success"></i>
-             </div>
-            <div>
-                <h6>Verified Professionals</h6>
-                <p>Over 500+ workers registered</p>
-            </div>
-          </div>
-        </div>
+  <div class="ms-4">
+    <h1 class="fw-bolder">Find trusted local <span class="text-primary">workers</span> in minutes</h1>
+    <p class="text-muted fs-5 mt-1">Connect with verified painters, plumbers, electricians, and more daily wage
+      professionals near your
+      location.</p>
+    <div class="bg-white search d-flex gap-2">
+      <div class="input-group">
+        <span class="input-group-text">
+          <i class="bi bi-search"></i>
+        </span>
+        <input type="text" class="form-control" #serviceInput placeholder="What service do you need?" required>
+      </div>
+      <div class="input-group">
+        <span class="input-group-text">
+          <i class="bi bi-geo-alt"></i>
+        </span>
+        <input type="text" class="form-control" #locationInput placeholder="Your location">
+      </div>
+      <button class="btn btn-primary px-4" (click)="search(serviceInput.value, locationInput.value)">Search</button>
     </div>
+    <div class="d-flex gap-3 mt-5 filter">
+      <p>Popular:</p>
+      <div><a (click)="search('plumber', '')">Plumber</a></div>
+      <div><a (click)="search('electrician', '')">Electricians</a></div>
+      <div><a (click)="search('Painter', '')">Painter</a></div>
+      <div><a (click)="search('Gardener', '')">Gardener</a></div>
+    </div>
+  </div>
+  <div class="img_container">
+    <img src="../../../assets/Images/home.jpg" alt="Image" height="500" width="700">
+    <div class="verified">
+      <div>
+        <i class="bi bi-star-fill text-success"></i>
+      </div>
+      <div>
+        <h6>Verified Professionals</h6>
+        <p>Over 500+ workers registered</p>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <!--Categories section-->
+<!--Categories section-->
 <div class="mt-5 mx-4">
   <div class="d-flex justify-content-between mb-3">
     <h2>Browse Categories</h2>
@@ -55,45 +56,80 @@
     </div>
     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
       <div class="category-card card" (click)="search('plumber', '')">
-        <div class="category-icon bg-secondary"><i class="bi bi-paint-bucket text-primary"></i></div>
+        <div class="category-icon bg-secondary"><i class="bi bi-nut text-primary"></i></div>
         <p class="fw-bold mt-2">Plumber</p>
       </div>
     </div>
     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
       <div class="category-card card" (click)="search('electrician', '')">
-        <div class="category-icon bg-secondary"><i class="bi bi-paint-bucket text-primary"></i></div>
+        <div class="category-icon bg-secondary"><i class="bi bi-lightning-charge text-primary"></i></div>
         <p class="fw-bold mt-2">Electrician</p>
       </div>
     </div>
     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
       <div class="category-card card" (click)="search('gardener', '')">
-        <div class="category-icon bg-secondary"><i class="bi bi-paint-bucket text-primary"></i></div>
+        <div class="category-icon bg-secondary"><i class="bi bi-flower1 text-primary"></i></div>
         <p class="fw-bold mt-2">Gardener</p>
       </div>
     </div>
     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
       <div class="category-card card" (click)="search('Carpenter', '')">
-        <div class="category-icon bg-secondary"><i class="bi bi-paint-bucket text-primary"></i></div>
+        <div class="category-icon bg-secondary"><i class="bi bi-tools text-primary"></i></div>
         <p class="fw-bold mt-2">Carpenter</p>
       </div>
     </div>
     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
       <div class="category-card card" (click)="search('barber', '')">
-        <div class="category-icon bg-secondary"><i class="bi bi-paint-bucket text-primary"></i></div>
+        <div class="category-icon bg-secondary"><i class="bi bi-scissors text-primary"></i></div>
         <p class="fw-bold mt-2">Barber</p>
       </div>
     </div>
     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
       <div class="category-card card" (click)="search('mason', '')">
-        <div class="category-icon bg-secondary"><i class="bi bi-paint-bucket text-primary"></i></div>
+        <div class="category-icon bg-secondary"><i class="bi bi-hammer text-primary"></i></div>
         <p class="fw-bold mt-2">Mason</p>
       </div>
     </div>
     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
       <div class="category-card card" (click)="search('cleaner', '')">
-        <div class="category-icon bg-secondary"><i class="bi bi-paint-bucket text-primary"></i></div>
+        <div class="category-icon bg-secondary"><i class="bi bi-radioactive text-primary"></i></div>
         <p class="fw-bold mt-2">Cleaner</p>
       </div>
     </div>
   </div>
+</div>
+<!--Register as a Worker section-->
+<div class="bg-primary mt-5 d-flex justify-content-between align-items-center py-5 px-3">
+  <div>
+    <h2 class="text-white">Are you a worker?</h2>
+    <p class="text-white fs-5">Join Rojgaar today to connect with customers in your area. <br> Registration is
+      completely free and takes only 2 minutes.</p>
+  </div>
+  <div>
+    <button class="btn bg-white py-3 px-4" [routerLink]="['/register']"><i class="bi bi-person-plus"></i> Create your Profile</button>
+  </div>
+</div>
+<div class="my-5">
+  <h2 class="ms-3">High Rated Workers Near you</h2>
+  <div class="row m-3">
+    <div class="col-12 col-md-6 col-lg-3" *ngFor="let worker of HighRatedWorker">
+      <div class="card" style="width: 18rem;">
+        <img src="../../../assets/Images/home.jpg" class="card-img-top" alt="...">
+        <div class="card-body text-center">
+          <div class="rating">
+            <i class="bi bi-star-fill text-warning"></i>
+            <span>{{worker.rating}} yrs</span>
+          </div>
+          <h6 class="card-title text-primary">{{worker.profession}}</h6>
+          <h5 class="card-title">{{worker.name}}</h5>
+          <p class="card-text"><i class="bi bi-geo-alt"></i> {{worker.address}}</p>
+          <a href="#" class="btn btn-outline-dark w-100">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footer my-5">
+  <hr class="mt-5">
+  <p class="text-center text-muted mt-4">© 2026 Rojgaar. A mockup marketplace for local workers.</p>
 </div>

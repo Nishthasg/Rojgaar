@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { DataService } from 'src/app/shared/data.service';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  constructor(private router:Router){}
+  HighRatedWorker:any[] = [];
+  workerList: any[] = [];
+  constructor(private router:Router, private DS:DataService){}
+  
+  ngOnInit(){
+    this.workerList = this.DS.getWorkers();
+    this.HighRatedWorker = this.workerList.sort((a,b)=>{
+      return b.rating - a.rating;
+    })
+  }
 
   search(service:String, location:String){
     if (!service || service.trim() === '') {
@@ -22,4 +32,5 @@ export class HomeComponent {
       }
     });
   }
+
 }

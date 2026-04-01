@@ -62,8 +62,7 @@ export class WorkersComponent {
     this.workerList = this.dataservice.getWorkers()
      this.filteredList = [...this.workerList];
     console.log("workerListworkerListworkerList",this.workerList);
-
-   console.log()
+    
     this.route.queryParams.subscribe( params =>{
     const service = params['service']?.toLowerCase() || '';
     const locations = params['location']?.toLowerCase() || '';
