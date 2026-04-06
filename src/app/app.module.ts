@@ -13,6 +13,7 @@ import { WorkerDetailsComponent } from './pages/workers/worker-details/worker-de
 import { CategoryComponent } from './pages/category/category.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { WorkerCardsComponent } from './components/worker-cards/worker-cards.component';
+import { WorkersModule } from './pages/workers/workers.module';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { WorkerCardsComponent } from './components/worker-cards/worker-cards.com
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    WorkersModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

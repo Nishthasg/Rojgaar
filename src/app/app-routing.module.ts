@@ -16,12 +16,14 @@ const routes: Routes = [
   },
   {
     path:'home',
-    component:HomeComponent
+    component:HomeComponent,
+    
   },
   {
     path:'workers',
-    component:WorkersComponent
-  },
+    loadChildren: ()=>
+    import('./pages/workers/workers.module').then(m => m.WorkersModule)
+  }
 ];
 
 @NgModule({

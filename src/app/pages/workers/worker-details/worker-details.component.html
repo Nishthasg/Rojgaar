@@ -1,1 +1,99 @@
-<p>worker-details works!</p>
+<div class="container d-flex">
+    <div>
+        <div class="card profile bg-secondary">
+            <div class="d-flex gap-2 align-items-center title">
+                <img src="../../../../assets/Images/home.jpg" alt="profile" height="150" width="150">
+                <div>
+                    <div class="d-flex align-items-center gap-2 mt-5">
+                        <h3>Ramesh Kumar </h3>
+                        <i class="bi bi-check-circle text-success text-small"></i>
+                    </div>
+                    <p class="text-primary fw-bold">Painter</p>
+                    <div class="d-flex gap-4">
+                        <p class="text-muted"><i class="bi bi-geo-alt"></i> Andheri, Mumbai</p>
+                        <p><i class="bi bi-star-fill text-warning"></i> 4.8 <span class="text-muted">(24 reviews)</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <h5 class="mt-2">About</h5>
+            <p class="text-muted">Expert in interior and exterior house painting. Fast and clean work with quality
+                materials.</p>
+            <h5>Skills & Expertise</h5>
+            <div>
+                <div class="d-flex gap-3 mt-2 filter">
+                    <div><a>Texture Painting</a></div>
+                    <div><a>Waterproofing</a></div>
+                    <div><a>Wall Painting</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="card mt-3 rating">
+           <h5>Reviews & Ratings</h5>
+           <div>
+            <div class="rating-container">
+                <div>
+                    <h2>4.8</h2>
+                    <div class="d-flex gap-2">
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                    </div>
+                    <p class="text-muted">24 reviews</p>
+                </div>
+                <div>
+                     <div class="rating-row" *ngFor="let r of ratings">
+      <span>{{r.star}} ★</span>
+
+      <div class="progress">
+        <div 
+          class="progress-bar" 
+          [style.width.%]="r.percentage">
+        </div>
+      </div>
+
+      <span>{{r.count}}</span>
+    </div>
+                </div>
+
+            </div>
+            <div class="reviews mt-4">
+              <div class="d-flex justify-content-between">
+                <div>
+                    <h5>Sanjay Pandey</h5>
+                    <small class="text-muted">2 weeks ago</small>
+                </div>
+                <div>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                </div>
+              </div>
+              <p class="text-muted">Excellent work! Very punctual and clean. Highly recommended.</p>
+              <hr>
+            </div>
+             <div class="reviews">
+              <div class="d-flex justify-content-between">
+                <div>
+                    <h5>Sanjay Pandey</h5>
+                    <small class="text-muted">2 weeks ago</small>
+                </div>
+                <div>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                </div>
+              </div>
+              <p class="text-muted">Excellent work! Very punctual and clean. Highly recommended.</p>
+            </div>
+           </div>
+        </div>
+    </div>
+    <div class="contact-card">
+        <div class="card">
+         
+        </div>
+    </div>
+</div>
