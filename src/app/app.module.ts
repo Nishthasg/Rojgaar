@@ -11,7 +11,7 @@ import { ForgetComponent } from './pages/forget/forget.component';
 import { WorkersComponent } from './pages/workers/workers.component';
 import { WorkerDetailsComponent } from './pages/workers/worker-details/worker-details.component';
 import { CategoryComponent } from './pages/category/category.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WorkerCardsComponent } from './components/worker-cards/worker-cards.component';
 import { WorkersModule } from './pages/workers/workers.module';
 
@@ -32,6 +32,7 @@ import { WorkersModule } from './pages/workers/workers.module';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
     WorkersModule,
   ],
   providers: [],

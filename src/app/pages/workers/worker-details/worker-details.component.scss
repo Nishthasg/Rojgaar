@@ -13,7 +13,7 @@
     }
     }
    }
-  .container{
+  .slot-container{
     margin: 0 auto;
     padding-top:97px;
     .profile{
@@ -65,4 +65,45 @@
 .progress-bar {
   height: 100%;
   background: gold;
+}
+.contact-card{
+    .card{
+        width:300px;
+        box-shadow: 0 1px 4px rgb(255, 69, 0.5);
+        border-radius: 15px;
+    }
+}
+.slots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.slot {
+  padding: 5px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.slot:hover {
+  background-color: #f5f5f5;
+}
+
+.slot.selected {
+  background-color: #ff4500;
+  color: white;
+}
+
+.slot.disabled {
+  background-color: #eee;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.summary {
+  margin-top: 15px;
+  font-weight: bold;
 }

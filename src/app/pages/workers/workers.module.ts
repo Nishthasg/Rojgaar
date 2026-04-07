@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WorkersRoutingModule } from './workers.routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -8,7 +9,8 @@ import { WorkersRoutingModule } from './workers.routing.module';
   declarations: [],
   imports: [
     CommonModule,
-    WorkersRoutingModule
+    WorkersRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class WorkersModule { }
