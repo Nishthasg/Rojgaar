@@ -123,7 +123,7 @@
           <h6 class="card-title text-primary">{{worker.profession}}</h6>
           <h5 class="card-title">{{worker.name}}</h5>
           <p class="card-text"><i class="bi bi-geo-alt"></i> {{worker.address}}</p>
-          <a [routerLink]="['/workers/details']" class="btn btn-outline-dark w-100">View Profile</a>
+          <a (click)="viewProfile(worker.id)" class="btn btn-outline-dark w-100">View Profile</a>
         </div>
       </div>
     </div>

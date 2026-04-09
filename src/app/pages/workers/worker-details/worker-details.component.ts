@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Route } from '@angular/router';
+import { DataService } from 'src/app/shared/data.service';
 
 @Component({
   selector: 'app-worker-details',
@@ -6,9 +8,26 @@ import { Component } from '@angular/core';
   styleUrls: ['./worker-details.component.scss']
 })
 export class WorkerDetailsComponent {
-   selectedDate: string = '';
+  selectedDate: string = '';
   selectedSlot: any = null;
+  workerList:any[] = [];
+  worker:any;
+  noOfStar:number = 0;
+  star:any[] = [];
   
+  constructor(private dataservice:DataService, private route:ActivatedRoute ){}
+  
+  ngOnInit(){
+    this.workerList = this.dataservice.getWorkers();
+    
+    this.route.queryParams.subscribe(params =>{
+      const workerId = Number(params['id']);
+      this.worker = this.workerList.find(w=> w.id === workerId);
+      console.log(this.worker);
+    })
+    this.noOfStar = Math.floor(this.worker.rating);
+    this.star = Array(this.noOfStar).fill(0);
+  }
  ratings = [
     { star: 5, count: 70, percentage: 70 },
     { star: 4, count: 25, percentage: 25 },

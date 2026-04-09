@@ -26,6 +26,6 @@
 </div>
 <div class="d-flex justify-content-between">
 <p><span class="text-muted">Experience:</span>{{worker.experience}}</p>
-<button class="btn btn-primary" [routerLink]="['/details']">View Profile</button>
+<button class="btn btn-primary" (click)="viewProfile(worker.id)">View Profile</button>
 </div>
 </div>

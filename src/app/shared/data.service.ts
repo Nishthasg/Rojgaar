@@ -7,7 +7,8 @@ export class DataService {
 
   constructor() { }
   workerList = [
-  {
+  { 
+    id:1,
     name:'Ramesh Kumar',
     profession:'Painter',
     address:'Andheri East, Mumbai',
@@ -17,6 +18,7 @@ export class DataService {
     rating:'4.8',
   },
   {
+    id:2,
     name:'Suresh Singh',
     profession:'Plumber',
     address:'Lajpat Nagar, Delhi',
@@ -25,7 +27,8 @@ export class DataService {
     experience:'8',
     rating:'4.5',
   },
-  {
+  { 
+    id:3,
     name:'Amit Sharma',
     profession:'Electrician',
     address:'Koramangala, Delhi',
@@ -35,8 +38,9 @@ export class DataService {
     rating:'4.9',
   },
   {
-   name:'Manoj Tiwari',
-   profession:'Carpenter',
+    id:4,
+    name:'Manoj Tiwari',
+    profession:'Carpenter',
     address:'Bandra, Mumbai',
     desc:'Custom furniture, door repairs, and modular kitchen installation. Fine woodwork guaranteed.',
     skills:['Door Repair', 'Furniture Making'],

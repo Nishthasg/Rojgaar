@@ -32,5 +32,9 @@ export class HomeComponent {
       }
     });
   }
-
+viewProfile(id:number){
+  this.router.navigate(['/details'],{
+    queryParams :{id:id}
+  })
+}
 }
