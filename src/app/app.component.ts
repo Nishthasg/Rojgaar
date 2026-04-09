@@ -12,7 +12,7 @@ export class AppComponent {
 
   constructor(private router:Router){
    this.router.events.subscribe(()=>{
-    this.showMainNavbar = !['/register', '/', '/workers'].includes(this.router.url);
+    this.showMainNavbar = !['/register','/login', '/workers'].includes(this.router.url);
    })
   }
 }

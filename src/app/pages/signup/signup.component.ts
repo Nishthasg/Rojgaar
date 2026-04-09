@@ -12,7 +12,7 @@ export class SignupComponent {
     name: new FormControl('', Validators.required),
     phone: new FormControl('', [Validators.required]),
     skill: new FormControl('', Validators.required),
-    experience: new FormControl('',[Validators.required]),
+    experience: new FormControl(''),
     address: new FormControl('', [Validators.required]),
     work: new FormControl(''),
   });

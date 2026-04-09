@@ -16,6 +16,7 @@ export class LoginComponent {
 
  onSubmit(){
   if(this.loginForm.valid){
+    localStorage.setItem('isLoggedIn', 'true');
     this.router.navigate(['/home']);
   }
   else{
