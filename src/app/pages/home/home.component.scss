@@ -1,28 +1,44 @@
 .home_container{
     padding-top:50px;
     min-height:100vh;
-    width:fit-content;
-    overflow-x:hidden;
+    width:100%;
+    overflow-x:clip;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
     h1{
         font-size:4rem;
     }
     img{
         border-radius:25px;
     }
+    .hero_content{
+        flex: 1 1 560px;
+        min-width: 0;
+    }
     .img_container{
         padding:40px;
+        flex: 1 1 420px;
+        max-width: 720px;
+        position: relative;
+    }
+    .hero_image{
+        width: 100%;
+        height: auto;
+        max-height: 500px;
+        object-fit: cover;
     }
    .verified{
     background-color: white;
-    width: 320px;
+    width: min(320px, calc(100% - 24px));
     display: flex;
     align-items:center;
     gap: 5px;
     padding:5px 15px;
     z-index: 99;
-    position: relative;
-    top: -100px;
-    left: 32px;
+    position: absolute;
+    bottom: 10px;
+    left: 52px;
     border-radius: 15px;
     i{
     background-color: #ddffd3;
@@ -36,7 +52,8 @@
    }
    .search{
     padding:14px;
-    width:fit-content;
+    width:100%;
+    max-width: 760px;
     border-radius:12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
    }
@@ -108,15 +125,80 @@
     margin: 2px auto !important;
 }
 
+.high-rated-workers {
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+.worker-card {
+    min-width: 0;
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+    }
+
+    .card-text {
+        flex: 1 1 auto;
+        word-break: break-word;
+    }
+}
+
+.worker-card__img {
+    width: 100%;
+    height: auto;
+    max-height: 220px;
+    object-fit: cover;
+}
+
 @media(max-width:425px){
  .home_container{
     h1{
-        font-size:3rem;
+        font-size:2.2rem;
         margin-top:15%;
     }
     text-align: center;
- }
-.img_container{
+    padding-top: 24px;
+    .hero_content{
+        padding-right: 1rem;
+    }
+    .search{
+        padding: 12px;
+        display: grid !important;
+        gap: 10px !important;
+    }
+    .filter{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .img_container{
         display:none;
+    }
+ }
+}
+
+@media (max-width:992px){
+    .home_container{
+        justify-content: center;
+        .hero_content{
+            margin-right: 1rem;
+        }
+        .search{
+            flex-wrap: wrap;
+            .input-group{
+                min-width: 220px;
+                flex: 1 1 240px;
+            }
+            button{
+                width: 100%;
+            }
+        }
+        .img_container{
+            padding-top: 0;
+        }
+        .verified{
+            left: 24px;
+        }
     }
 }
