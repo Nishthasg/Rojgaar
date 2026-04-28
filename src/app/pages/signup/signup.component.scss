@@ -1,12 +1,12 @@
 .login-container{
-    width: 45%;
-    height: 100%;
-    margin: 65px auto;
+    box-sizing: border-box;
+    width: min(calc(100% - 1.5rem), 38rem);
+    margin: clamp(2rem, 5vh, 4rem) auto;
     border: 1px solid #dee2e6;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     form{
-        margin:30px;
+        margin: clamp(1rem, 4vw, 1.875rem);
         .form-control{
             border-radius:10px;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
@@ -25,7 +25,7 @@
 
 }
 .container-heading{
-    padding:15px 0;
+    padding: 15px clamp(0.75rem, 3vw, 1rem);
     background-color: #fef7f2;
     border-bottom:1px solid #dee2e6;
     border-top-left-radius:15px;
