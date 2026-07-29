@@ -14,6 +14,7 @@ import { CategoryComponent } from './pages/category/category.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WorkerCardsComponent } from './components/worker-cards/worker-cards.component';
 import { WorkersModule } from './pages/workers/workers.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { WorkersModule } from './pages/workers/workers.module';
     ReactiveFormsModule,
     FormsModule,
     WorkersModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
