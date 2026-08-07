@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WorkerCardsComponent } from './components/worker-cards/worker-cards.component';
 import { WorkersModule } from './pages/workers/workers.module';
 import { HttpClientModule } from '@angular/common/http';
+import { WorkerRegisterComponent } from './pages/worker-register/worker-register.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
     WorkerDetailsComponent,
     WorkerCardsComponent,
     CategoryComponent,
+    WorkerRegisterComponent,
   ],
   imports: [
     BrowserModule,

@@ -13,7 +13,12 @@ export class LoginComponent {
   username: new FormControl('',[Validators.required]),
   password: new FormControl('', [Validators.required, Validators.minLength(6)])
  });
+ showPassword:boolean  = false;
  constructor(private router:Router, private authservice: AuthService){};
+
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
+  }
 
  onSubmit(){
   if(this.loginForm.valid){

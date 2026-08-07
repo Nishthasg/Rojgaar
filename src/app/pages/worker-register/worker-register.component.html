@@ -1,0 +1,83 @@
+<div class="login-container">
+    <div class="container-heading">
+        <h2 class="text-center">Register as a Worker</h2>
+        <p class="text-center">Create your profile to start getting jobs in your area.</p>
+    </div>
+    <form [formGroup]="workerForm" (ngSubmit)="onSubmit()">
+        <div class="row g-4">
+            <div class="col-12 col-sm-6">
+                <div class="form-group">
+                    <label>Service Category<span class="text-danger">*</span></label>
+                    <select class="form-control" formControlName="category">
+                        <option value="" selected>Select Service Category</option>
+                        <option value="1">1</option>
+                    </select>
+                    <div *ngIf="workerForm.controls['category'].touched && workerForm.controls['category'].hasError('required')">
+                        <p class="text-danger">Service Category is required</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6">
+                <div class="form-group">
+                    <label>Skills<span class="text-danger">*</span></label>
+                    <input type="email" class="form-control" placeholder="e.g. Sweeper" formControlName="skills">
+                    <p *ngIf="workerForm.controls['skills'].touched && workerForm.controls['skills'].hasError('required')" class="text-danger">Skill is required</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6">
+                <div class="form-group">
+                    <label>Experience<span class="text-danger">*</span></label>
+                    <input type="number" class="form-control" placeholder="e.g. 3" formControlName="experience">
+                    <p *ngIf="workerForm.controls['experience'].touched && workerForm.controls['experience'].hasError('required')" class="text-danger">Experience is required</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6">
+                <div class="form-group">
+                    <label>Rate/hr</label>
+                    <input class="form-control" placeholder="e.g. 200 rs" type="number" formControlName="hourlyRate">
+                     <p *ngIf="workerForm.controls['hourlyRate'].touched && workerForm.controls['hourlyRate'].hasError('required')" class="text-danger">Rate is required</p>
+                </div>
+            </div>
+        <div class="col-12 col-sm-6">
+                <div class="form-group">
+                    <label>State<span class="text-danger">*</span></label>
+                    <select class="form-control" formControlName="state">
+                        <option value="" selected>Select State</option>
+                        <option value="Delhi">Delhi</option>
+                    </select>
+                    <div *ngIf="workerForm.controls['state'].touched && workerForm.controls['state'].hasError('required')">
+                        <p class="text-danger">State is required</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6">
+                <div class="form-group">
+                    <label>City<span class="text-danger">*</span></label>
+                    <select class="form-control" formControlName="city">
+                        <option value="" selected>Select City</option>
+                        <option value="New Delhi">New Delhi</option>
+                    </select>
+                    <div *ngIf="workerForm.controls['city'].touched && workerForm.controls['city'].hasError('required')">
+                        <p class="text-danger">City is required</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6">
+                <div class="form-group">
+                    <label>Availability</label>
+                    <input class="form-control" type="text" formControlName="availability">
+                     <p *ngIf="workerForm.controls['availability'].touched && workerForm.controls['availability'].hasError('required')" class="text-danger">Availability is required</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6">
+                <div class="form-group">
+                    <label>Upload Photo</label>
+                    <input class="form-control" type="file" formControlName="profileImage">
+                     <p *ngIf="workerForm.controls['profileImage'].touched && workerForm.controls['profileImage'].hasError('required')" class="text-danger">Profile Photo is required</p>
+                </div>
+            </div>
+            </div>
+        <button class="btn btn-primary w-100 mt-4 py-2" type="submit">Register Worker</button>
+         <!-- <p class="text-center mt-1">Already registerd? <a [routerLink]="['/']" class="text-primary">Login here</a></p> -->
+    </form>
+</div>

@@ -5,6 +5,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { HomeComponent } from './pages/home/home.component';
 import { WorkersComponent } from './pages/workers/workers.component';
 import { AuthGuard } from './auth.guard';
+import { WorkerRegisterComponent } from './pages/worker-register/worker-register.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,11 @@ const routes: Routes = [
   {
     path:'register',
     component:SignupComponent
+  },
+  {
+   path:'worker-register',
+   component: WorkerRegisterComponent,
+   canActivate:[AuthGuard]
   },
   {
     path:'home',
