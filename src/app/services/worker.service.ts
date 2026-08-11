@@ -8,6 +8,7 @@ import { environment } from 'src/environments/environment';
 export class WorkerService {
  private apiUrl = environment.apiUrl;
   constructor(private http: HttpClient) { }
+
  registerWorker(workerData: any){
   const token = localStorage.getItem('token');
 
@@ -20,5 +21,25 @@ export class WorkerService {
       workerData,
       { headers }
     );
+ }
+
+ getWorkers(){
+  return this.http.get(`${this.apiUrl}/workers`);
+ }
+ 
+ getWorkerById(id: string){
+  return this.http.get(`${this.apiUrl}/workers/${id}`);
+ }
+
+ getCategories(){
+  return this.http.get(`${this.apiUrl}/categories`);
+ }
+
+ getStates(){
+  return this.http.get(`${this.apiUrl}/locations/states`);
+ }
+ 
+ getCityByState(stateId: string){
+  return this.http.get(`${this.apiUrl}/locations/states/${stateId}/cities`);
  }
 }

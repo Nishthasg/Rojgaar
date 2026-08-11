@@ -4,28 +4,33 @@
     <img src="../../../assets/Images/home.jpg" alt="Worker img" height="80" width="80">
 </div>
 <div class="title">
-    <h5>{{worker.name}}</h5>
-    <p class="text-primary">{{worker.profession}}</p>
+    <h5>{{worker.user.name}}</h5>
+    <p class="text-primary">{{worker.category}}</p>
     <p>
         <i class="bi bi-geo-alt"></i>
-        {{worker.address}}
+        {{worker.city}}, {{worker.state}}
     </p>
 </div>
 <div class="rating ms-auto">
     <i class="bi bi-star-fill text-warning"></i>
-    <span>{{worker.rating}}</span>
+    <span>4.1</span>
 </div>
 </div>
 <div class="mt-2">
- <p class="text-muted">{{worker.desc}}</p>
+ <p class="text-muted">{{worker.bio}}</p>
  <div class="worker-skill d-flex gap-3 text-muted">
-    <p *ngFor="let item of worker.skills">{{item}}</p>
-    <p>+1</p>
+    <p *ngFor="let skill of worker.skills | slice:0:3">
+    {{ skill }}
+  </p>
+
+  <p *ngIf="worker.skills?.length > 3">
+    +{{ worker.skills.length - 3 }}
+  </p>
  </div>
  <hr>
 </div>
 <div class="d-flex justify-content-between">
 <p><span class="text-muted">Experience:</span>{{worker.experience}}</p>
-<button class="btn btn-primary" (click)="viewProfile(worker.id)">View Profile</button>
+<button class="btn btn-primary" (click)="viewProfile(worker._id)">View Profile</button>
 </div>
 </div>

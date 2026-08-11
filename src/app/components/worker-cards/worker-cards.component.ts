@@ -12,10 +12,6 @@ export class WorkerCardsComponent {
 
   constructor(private router:Router){}
   viewProfile(id:number){
-   this.router.navigate(['/details'],{
-    queryParams: {
-      id:id
-    }
-   })
+   this.router.navigate(['/workers/detail', id]);
   }
 }
