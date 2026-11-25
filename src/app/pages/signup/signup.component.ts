@@ -15,8 +15,11 @@ export class SignupComponent {
   phone: new FormControl('', Validators.required),
   password: new FormControl('', [Validators.required, Validators.minLength(6)])
 });
-
+showPassword:boolean  = false;
   constructor(private router: Router, private authservice: AuthService){};
+   togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
+  }
 
   onSubmit(){
   //   if(this.userForm.valid){
@@ -46,7 +49,7 @@ export class SignupComponent {
         },
         error: (error) => {
           console.error(error);
-          alert(error.error.message);
+          alert(error.error?.message || 'Registration failed. Please try again.');
         }
       });
     } else {

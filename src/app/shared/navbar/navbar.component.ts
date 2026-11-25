@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
+   alreadyLoggedIn = localStorage.getItem('token') !== null;
+ logout(){
+  localStorage.removeItem('token');
+  this.alreadyLoggedIn = false;
+ }
 
 }

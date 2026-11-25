@@ -6,7 +6,8 @@
         </div>
         <div class="d-flex gap-3 align-items-center">
             <a [routerLink]="['/worker-register']" class="text-dark text-decoration-none">Register as Worker</a>
-            <button class="btn btn-primary" [routerLink]="['/workers']">Find Workers</button>
+            <button *ngIf="!alreadyLoggedIn" class="btn btn-primary" [routerLink]="['/login']">Login</button>
+            <button *ngIf="alreadyLoggedIn" class="btn btn-primary" (click)="logout()">Logout</button>
         </div>
     </div>
 </nav>

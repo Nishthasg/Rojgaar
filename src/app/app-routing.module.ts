@@ -10,7 +10,7 @@ import { WorkerRegisterComponent } from './pages/worker-register/worker-register
 const routes: Routes = [
   {
     path:'',
-    redirectTo:'login',
+    redirectTo:'home',
     pathMatch:'full'
   },
   {
@@ -29,14 +29,14 @@ const routes: Routes = [
   {
     path:'home',
     component:HomeComponent,
-    canActivate:[AuthGuard]
+    // canActivate:[AuthGuard]
     
   },
   {
     path:'workers',
     loadChildren: ()=>
     import('./pages/workers/workers.module').then(m => m.WorkersModule),
-    canActivate:[AuthGuard]
+    // canActivate:[AuthGuard]
   }
 ];
 
