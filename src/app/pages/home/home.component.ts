@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { WorkerService } from 'src/app/services/worker.service';
 import { DataService } from 'src/app/shared/data.service';
 
 @Component({
@@ -11,13 +12,24 @@ import { DataService } from 'src/app/shared/data.service';
 export class HomeComponent {
   HighRatedWorker:any[] = [];
   workerList: any[] = [];
-  constructor(private router:Router, private DS:DataService){}
+  constructor(private router:Router, private workerService: WorkerService){}
   
   ngOnInit(){
-    this.workerList = this.DS.getWorkers();
-    this.HighRatedWorker = this.workerList.sort((a,b)=>{
-      return b.rating - a.rating;
+     this.workerService.getWorkers().subscribe(
+      (response: any) =>{
+        this.workerList = response.data;
+        console.log('Workers fetched successfully:', this.workerList);
+        this.HighRatedWorker = this.workerList.sort((a,b)=>{
+      return b.experience - a.experience;
     })
+      }, (error: any) =>{
+        console.error('Error fetching workers:', error);
+      }
+    );
+    // this.HighRatedWorker = this.workerList.sort((a,b)=>{
+    //   return b.rating - a.rating;
+    // })
+    //console.log('High Rated Workers:', this.HighRatedWorker);
   }
 
   search(service:String, location:String){
@@ -33,8 +45,6 @@ export class HomeComponent {
     });
   }
 viewProfile(id:number){
-  this.router.navigate(['/details'],{
-    queryParams :{id:id}
-  })
+  this.router.navigate(['/workers/detail',id]);
 }
 }

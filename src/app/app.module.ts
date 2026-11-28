@@ -16,6 +16,8 @@ import { WorkerCardsComponent } from './components/worker-cards/worker-cards.com
 import { WorkersModule } from './pages/workers/workers.module';
 import { HttpClientModule } from '@angular/common/http';
 import { WorkerRegisterComponent } from './pages/worker-register/worker-register.component';
+import { ForgotPasswordComponent } from './pages/login/forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './pages/login/reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { WorkerRegisterComponent } from './pages/worker-register/worker-register
     WorkerCardsComponent,
     CategoryComponent,
     WorkerRegisterComponent,
+    ForgotPasswordComponent,
+    ResetPasswordComponent,
   ],
   imports: [
     BrowserModule,

@@ -21,4 +21,10 @@ login(userData:any){
 getProfile(){
  return this.http.get(`${this.apiUrl}/auth/profile`);
 }
+sendResetLink(email: string){
+  return this.http.post(`${this.apiUrl}/auth/forgot-password`, {email});
+}
+resetPassword(token: string, password: string){
+  return this.http.post(`${this.apiUrl}/auth/reset-password`, {token,password});
+}
 }

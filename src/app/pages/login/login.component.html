@@ -29,7 +29,9 @@
                     <div *ngIf="loginForm.controls['password'].hasError('minlength')">
                         <p class="text-danger">Incorrect password</p>
                     </div>
-                    <p class="text-danger" *ngIf="loginForm.controls['password'].touched">Forget password?</p>
+                    <p class="text-danger" *ngIf="loginForm.controls['password'].touched">
+                        <a class="cursor-pointer text-primary" [routerLink]="['/forgot-password']">Forgot password?</a>
+                    </p>
                 </div>
             </div>
         </div>

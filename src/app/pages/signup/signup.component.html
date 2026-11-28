@@ -1,7 +1,8 @@
-<div class="login-container">
+<div class="main-div">
+    <div class="login-container">
     <div class="container-heading">
         <h2 class="text-center">Register here</h2>
-        <p class="text-center">Create your profile to start getting jobs in your area.</p>
+        <p class="text-center">Create your profile to start getting workers or jobs in your area.</p>
     </div>
     <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
         <div class="row g-4">
@@ -45,4 +46,5 @@
         <button class="btn btn-primary w-100 mt-4 py-2" type="submit">Create Profile</button>
          <p class="text-center mt-1">Already registerd? <a [routerLink]="['/login']" class="text-primary">Login here</a></p>
     </form>
+</div>
 </div>
